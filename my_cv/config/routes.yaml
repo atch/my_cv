@@ -4,3 +4,7 @@
 #index:
 #    path: /
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+app_Pierre_number:
+    path: /Pierre/number
+    controller: App\Controller\PierreController::number
