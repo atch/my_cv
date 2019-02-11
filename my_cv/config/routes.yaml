@@ -6,5 +6,9 @@
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
 
 app_Pierre_number:
-    path: /Pierre/number
+    path: /pierre/number
     controller: App\Controller\PierreController::number
+    
+Form_Experience:
+    path: /Experience/create
+    controller: App\Controller\ExperienceController::create

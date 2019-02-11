@@ -98,11 +98,29 @@
 			<div class="clear"></div>
 		</section>
 		
-		
 		<section>
 			<div class="sectionTitle">
 				<h1>Education</h1>
 			</div>
+			 
+			{% for formation in formations %}
+			{{ formation.getType() }} 
+			{% endfor %}
+			<br>
+		
+			{% for loisir in loisirs %}
+			{{ loisir.getType() }}
+			</br>
+			{% endfor %}
+			</br>
+
+			</br>
+			{% for experience in experiences %}
+			{{ experience.getDescription() }} 
+			</br>
+			{% endfor %}
+		
+		
 			
 			<div class="sectionContent">
 				<article>

@@ -1,0 +1,6 @@
+[04-Feb-2019 08:12:34 UTC] PHP Fatal error:  Uncaught Symfony\Component\Dotenv\Exception\PathException: Unable to read the "/home/ubuntu/workspace/my_cv/.env" environment file. in /home/ubuntu/workspace/my_cv/vendor/symfony/dotenv/Dotenv.php:53
+Stack trace:
+#0 /home/ubuntu/workspace/my_cv/config/bootstrap.php(25): Symfony\Component\Dotenv\Dotenv->load('/home/ubuntu/wo...')
+#1 /home/ubuntu/workspace/my_cv/bin/console(26): require('/home/ubuntu/wo...')
+#2 {main}
+  thrown in /home/ubuntu/workspace/my_cv/vendor/symfony/dotenv/Dotenv.php on line 53

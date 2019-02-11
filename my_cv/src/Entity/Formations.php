@@ -3,12 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use ApiPlatform\Core\Annotation\ApiResource;
+
 /**
- * @ApiResource
- * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\FormationsRepository")
  */
-class Experience
+class Formations
 {
     /**
      * @ORM\Id()
@@ -25,12 +24,12 @@ class Experience
     /**
      * @ORM\Column(type="time")
      */
-    private $time;
+    private $durée;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description;
+    private $type;
 
     public function getId(): ?int
     {
@@ -49,26 +48,26 @@ class Experience
         return $this;
     }
 
-    public function getTime(): ?\DateTimeInterface
+    public function getDurée(): ?\DateTimeInterface
     {
-        return $this->time;
+        return $this->durée;
     }
 
-    public function setTime(\DateTimeInterface $time): self
+    public function setDurée(\DateTimeInterface $durée): self
     {
-        $this->time = $time;
+        $this->durée = $durée;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getType(): ?string
     {
-        return $this->description;
+        return $this->type;
     }
 
-    public function setDescription(string $description): self
+    public function setType(string $type): self
     {
-        $this->description = $description;
+        $this->type = $type;
 
         return $this;
     }
