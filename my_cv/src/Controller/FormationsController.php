@@ -6,19 +6,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Entity\Experience;
-use App\Form\ExperienceType;
+use App\Entity\Formations;
+use App\Form\FormationsType;
 
 
-class ExperienceController extends AbstractController
+class FormationsController extends AbstractController
 {
     public function create()
 {
-    $experience = new Experience();
-    $form = $this->createForm(ExperienceType::class, $experience);
+    $formations = new Formations();
+    $form = $this->createForm(FormationsType::class, $formations);
     
-    return $this->render('Experience/create.html.twig', [
-        'entity' => $experience,
+    return $this->render('Formations/create.html.twig', [
+        'entity' => $formations,
         'form' => $form->createView(),
         ]
         );
@@ -27,24 +27,24 @@ class ExperienceController extends AbstractController
 
   public function valid(Request $request)
 {
-    $experience = new Experience();
-    $form = $this->createForm(ExperienceType::class, $experience);
+    $formations = new Formations();
+    $form = $this->createForm(FormationsType::class, $formations);
 
  $form->handleRequest($request);
     
     if ($form->isSubmitted() && $form->isValid()) {
-        $experience = $form->getData();
+        $formations = $form->getData();
         
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($experience);
+        $entityManager->persist($formations);
         $entityManager->flush();
         
-        return $this->redirectToRoute('index');
+        return $this->redirectionToRoute('index');
         
     }
     
-    return $this->render('Experience/create.html.twig', [
-        'entity' => $experience,
+    return $this->render('Formations/create.html.twig', [
+        'entity' => $formations,
         'form' => $form->createView(),
         ]
         );

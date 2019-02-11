@@ -5,10 +5,23 @@
 #    path: /
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
 
-app_Pierre_number:
+index:
     path: /pierre/number
     controller: App\Controller\PierreController::number
     
-Form_Experience:
+Form_experience:
     path: /Experience/create
     controller: App\Controller\ExperienceController::create
+    
+valid_experience:
+    path: /Experience/valid
+    controller: App\Controller\ExperienceController::valid
+    
+Form_formations:
+    path: /Formations/create
+    controller: App\Controller\ExperienceController::create
+    
+valid_formations:
+    path: /Formations/valid
+    controller: App\Controller\FormationsController::valid
+    
