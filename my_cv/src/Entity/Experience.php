@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+
 /**
  * @ApiResource
  * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
@@ -18,16 +20,19 @@ class Experience
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
     private $date;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="time")
      */
     private $time;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $description;

@@ -16,12 +16,7 @@ Form_experience:
 valid_experience:
     path: /Experience/valid
     controller: App\Controller\ExperienceController::valid
+
     
-Form_formations:
-    path: /Formations/create
-    controller: App\Controller\ExperienceController::create
-    
-valid_formations:
-    path: /Formations/valid
-    controller: App\Controller\FormationsController::valid
+
     

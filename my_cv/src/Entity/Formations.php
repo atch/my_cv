@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,19 +18,22 @@ class Formations
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
-    private $date;
+    private $Date;
 
     /**
-     * @ORM\Column(type="time")
-     */
-    private $durée;
-
-    /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
-    private $type;
+    private $description;
+
+    /**
+     * @Assert\NotBlank
+     * @ORM\Column(type="time")
+     */
+    private $time;
 
     public function getId(): ?int
     {
@@ -38,36 +42,36 @@ class Formations
 
     public function getDate(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->Date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(\DateTimeInterface $Date): self
     {
-        $this->date = $date;
+        $this->Date = $Date;
 
         return $this;
     }
 
-    public function getDurée(): ?\DateTimeInterface
+    public function getDescription(): ?string
     {
-        return $this->durée;
+        return $this->description;
     }
 
-    public function setDurée(\DateTimeInterface $durée): self
+    public function setDescription(string $description): self
     {
-        $this->durée = $durée;
+        $this->description = $description;
 
         return $this;
     }
 
-    public function getType(): ?string
+    public function getTime(): ?\DateTimeInterface
     {
-        return $this->type;
+        return $this->time;
     }
 
-    public function setType(string $type): self
+    public function setTime(\DateTimeInterface $time): self
     {
-        $this->type = $type;
+        $this->time = $time;
 
         return $this;
     }
